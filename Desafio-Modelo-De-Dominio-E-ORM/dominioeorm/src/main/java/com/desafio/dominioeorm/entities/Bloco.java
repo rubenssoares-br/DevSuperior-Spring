@@ -3,9 +3,7 @@ package com.desafio.dominioeorm.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "tb_bloco")
@@ -17,8 +15,9 @@ public class Bloco {
     private Instant inicio;
     private Instant fim;
 
-    @ManyToMany(mappedBy = "blocos")
-    private Set<Atividade> atividades = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "atividade_id")
+    private Atividade atividade;
 
     public Bloco() {
     }

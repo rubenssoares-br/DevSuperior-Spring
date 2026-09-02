@@ -2,9 +2,7 @@ package com.desafio.dominioeorm.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_atividade")
@@ -27,11 +25,8 @@ public class Atividade {
             inverseJoinColumns = @JoinColumn(name = "participante_id"))
     private Set<Participante> participantes = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(name = "tb_atividade_bloco",
-            joinColumns = @JoinColumn(name = "atividade_id"),
-            inverseJoinColumns = @JoinColumn(name = "bloco_id"))
-    private Set<Bloco> blocos = new HashSet<>();
+    @OneToMany(mappedBy = "atividade")
+    private List<Bloco> blocos = new ArrayList<>();
 
 
     public Atividade() {

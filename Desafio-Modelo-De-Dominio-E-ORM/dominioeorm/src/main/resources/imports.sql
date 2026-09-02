@@ -9,13 +9,9 @@ INSERT INTO tb_participante (id, nome, email) VALUES (2, 'Tiago Faria', 'tiago@g
 INSERT INTO tb_participante (id, nome, email) VALUES (3, 'Maria do Rosário', 'maria@gmail.com');
 INSERT INTO tb_participante (id, nome, email) VALUES (4, 'Teresa Silva', 'teresa@gmail.com');
 
-INSERT INTO tb_bloco (id, inicio, fim) VALUES (1, TIMESTAMP WITH TIME ZONE '2017-09-25 08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25 11:00:00Z');
-INSERT INTO tb_bloco (id, inicio, fim) VALUES (2, TIMESTAMP WITH TIME ZONE '2017-09-25 14:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25 18:00:00Z');
-INSERT INTO tb_bloco (id, inicio, fim) VALUES (3, TIMESTAMP WITH TIME ZONE '2017-09-26 08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-26 11:00:00Z');
-
-INSERT INTO tb_atividade_bloco (atividade_id, bloco_id) VALUES (1, 1);
-INSERT INTO tb_atividade_bloco (atividade_id, bloco_id) VALUES (2, 2);
-INSERT INTO tb_atividade_bloco (atividade_id, bloco_id) VALUES (2, 3);
+INSERT INTO tb_bloco (id, inicio, fim, atividade_id) VALUES (1, TIMESTAMP WITH TIME ZONE '2017-09-25 08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25 11:00:00Z', 1);
+INSERT INTO tb_bloco (id, inicio, fim, atividade_id) VALUES (2, TIMESTAMP WITH TIME ZONE '2017-09-25 14:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25 18:00:00Z', 2);
+INSERT INTO tb_bloco (id, inicio, fim, atividade_id) VALUES (3, TIMESTAMP WITH TIME ZONE '2017-09-26 08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-26 11:00:00Z', 2);
 
 INSERT INTO tb_atividade_participante (atividade_id, participante_id) VALUES (1, 1);
 INSERT INTO tb_atividade_participante (atividade_id, participante_id) VALUES (1, 2);
